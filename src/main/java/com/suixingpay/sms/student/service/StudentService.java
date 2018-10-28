@@ -13,7 +13,9 @@ import java.util.Map;
 public interface StudentService {
 	Map<String,Object> saveStudent(Student student);
 
-	List<Student> listStudent(Student student);
+	List<Student> listAllStudent();
+
+	List<Student> listStudent(String sid, String sname);
 
 	boolean removeStudent(String[] arrayId);
 

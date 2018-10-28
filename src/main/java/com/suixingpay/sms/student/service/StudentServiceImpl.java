@@ -34,8 +34,13 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public List<Student> listStudent(Student student) {
-		return null;
+	public List<Student> listAllStudent() {
+		return studentDao.listStudent();
+	}
+
+	@Override
+	public List<Student> listStudent(String sid, String sname) {
+    	return studentDao.listStudentBy(sid, sname);
 	}
 
 	@Override

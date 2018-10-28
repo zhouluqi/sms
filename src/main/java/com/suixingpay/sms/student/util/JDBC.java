@@ -124,12 +124,26 @@ public class JDBC {
         }
     }
 
-    public ArrayList<Student> selectList(String... names){
+    public ArrayList<Student> selectListByName(String name){
+        ArrayList<Student> arr = new ArrayList<Student>();
+        for (Student s : STUDENT_BOX.values()){
+            if ( name.equals(s.getName())) {
+                arr.add(s);
+            }
+        }
+        return arr;
+    }
+    //id==0：查询所有；id==1：查询单个
+    public ArrayList<Student> selectList(String... id){
         ArrayList<Student> arr;
         arr = new ArrayList<Student>();
-        for (int i=0; i<names.length; i++) {
-            arr.add(STUDENT_BOX.get(names[i]));
+        if ( id == null || id.length == 0) {
+            for (Student s : STUDENT_BOX.values()){
+                arr.add(s);
+            }
+            return arr;
         }
+        arr.add(STUDENT_BOX.get(id));
         return arr;
     }
 
