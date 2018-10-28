@@ -35,13 +35,12 @@ public class StudentsController {
 	 * @author zhangzhen
 	 * @param
 	 */
-	@GetMapping("/test")
+	@GetMapping("/index")
 	public ModelAndView text() {
 		List<Student> students = studentService.listAllStudent();
-		System.out.println(students.size());
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("students", students);
-		modelAndView.setViewName("test");
+		modelAndView.setViewName("index");
 		return modelAndView;
 	}
 
