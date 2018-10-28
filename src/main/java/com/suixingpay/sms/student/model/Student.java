@@ -11,8 +11,7 @@ public class Student {
 	private String name;
 	private String sex;
 	private Integer age;
-	private String  classNumber;
-	private String teacher;
+	private String classNumber;
 	private String creatDate;
 	private String EnrollmentYear;
 	private String status;
@@ -57,14 +56,6 @@ public class Student {
 		this.classNumber = classNumber;
 	}
 
-	public String getTeacher() {
-		return teacher;
-	}
-
-	public void setTeacher(String teacher) {
-		this.teacher = teacher;
-	}
-
 	public String getCreatDate() {
 		return creatDate;
 	}
@@ -90,6 +81,14 @@ public class Student {
 	}
 
 	@Override
+	public boolean equals(Object obj) {
+		if (obj != null) {
+			return obj.toString().equals(this.toString());
+		}
+		return false;
+	}
+
+	@Override
 	public String toString() {
 		return "Student{" +
 				"id='" + id + '\'' +
@@ -97,7 +96,6 @@ public class Student {
 				", sex='" + sex + '\'' +
 				", age=" + age +
 				", classNumber='" + classNumber + '\'' +
-				", teacher='" + teacher + '\'' +
 				", creatDate='" + creatDate + '\'' +
 				", EnrollmentYear='" + EnrollmentYear + '\'' +
 				", status='" + status + '\'' +
