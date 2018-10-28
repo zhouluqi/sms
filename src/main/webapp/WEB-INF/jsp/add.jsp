@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -62,36 +62,36 @@
                                 <div class="modal-header">
                                     <div class="input-group">
                                         <span class="input-group-addon">姓名：</span>
-                                        <input type="text" placeholder="请输入姓名" class="form-control" style="max-width:200px;" id="name" onkeyup="checkName()">
+                                        <input type="text" placeholder="请输入姓名" class="form-control" style="max-width:200px;" name="name" onkeyup="checkName()">
                                         <span class="input-group point" id="span1"></span>
                                     </div>
                                     <div class="input-group" style="margin-top:10px;">
                                         <span class="input-group-addon">年龄：</span>
-                                        <input type="number" placeholder="请输入年龄" class="form-control" style="max-width:200px;" id="age">
+                                        <input type="number" placeholder="请输入年龄" class="form-control" style="max-width:200px;" name="age">
                                         <span class="input-group" id="span2"></span>
                                     </div>
                                     <div class="input-group" style="margin-top:10px;">
                                         <span class="input-group-addon">学号：</span>
-                                        <input type="number" placeholder="请输入学号" class="form-control" style="max-width:200px;" id="sex">
+                                        <input type="number" placeholder="请输入学号" class="form-control" style="max-width:200px;" name="sex">
                                         <span class="input-group" id="span3"></span>
                                     </div>
                                     <div class="input-group" style="margin-top:10px;">
                                         <span class="input-group-addon">班级：</span>
-                                        <input type="text" placeholder="请输入班级" class="form-control" style="max-width:200px;" id="classNumber">
+                                        <input type="text" placeholder="请输入班级" class="form-control" style="max-width:200px;" name="classNumber">
                                         <span class="input-group" id="span4"></span>
                                     </div>
                                     <div class="input-group" style="margin-top:10px;">
                                         <span class="input-group-addon">导员：</span>
-                                        <input type="text" placeholder="请输入导员姓名" class="form-control point" style="max-width:200px;" id="teacher">
+                                        <input type="text" placeholder="请输入导员姓名" class="form-control point" style="max-width:200px;" name="teacher">
                                         <span class="input-group" id="span5"></span>
                                     </div>
                                     <div class="input-group" style="margin-top:10px;">
                                         <span class="input-group-addon">创建时间：</span>
-                                        <input id="creatDate" type="text" class="form-control" style="max-width:200px;">
+                                        <input id="creatDate" type="text" class="form-control" style="max-width:200px;" name="">
                                     </div>
                                     <div class="input-group" style="margin-top:10px;">
                                         <span class="input-group-addon">入学年份：</span>
-                                        <input type="month" class="form-control" style="max-width:200px;" id="EnrollmentYear">
+                                        <input type="month" class="form-control" style="max-width:200px;" id="EenrollmentYear">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
