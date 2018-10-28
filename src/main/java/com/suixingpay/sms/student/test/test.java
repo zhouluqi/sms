@@ -17,7 +17,10 @@ public class test {
 		Student student = new Student();
 		System.out.println(student);
 
-		//String basePath = request.getScheme()+”://”+request.getServerName()+”:”+request.getServerPort()+path+”/”;
+
+
+
 
 	}
+
 }

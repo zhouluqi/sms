@@ -2,6 +2,7 @@ package com.suixingpay.sms.student.controller;
 
 import com.suixingpay.sms.student.model.Student;
 import com.suixingpay.sms.student.service.StudentService;
+import com.suixingpay.sms.student.util.JDBC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,6 +54,17 @@ public class StudentsController {
 		//mainMap.put("json头",map);
        return map;
 
+	}
+
+	/**
+	 * @author 刘维邦
+	 * @param student
+	 */
+	@GetMapping("/deleteStudent")
+	@ResponseBody
+	public void deleteStudent(Student student){
+		JDBC G = JDBC.getInstance();
+		G.delete(student);
 	}
 	@GetMapping("/test")
 	public String text(){
