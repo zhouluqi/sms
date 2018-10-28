@@ -128,7 +128,7 @@
   </thead>
   <tbody>
   <c:forEach var="student" items="${ students }">
-
+      <c:if test="${student.status eq 'normal'}">
       <tr>
         <td>
           <input type="checkbox">
@@ -143,7 +143,7 @@
         <td><a>修改</a></td>
         <td><a>删除</a></td>
       </tr>
-
+      </c:if>
   </c:forEach>
   </tbody>
   </table>
