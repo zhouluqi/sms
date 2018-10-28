@@ -131,7 +131,7 @@
       <c:if test="${student.status eq 'normal'}">
       <tr>
         <td>
-          <input type="checkbox" name="ID">
+          <input type="checkbox" name="ids">
         </td>
         <td>${student.name}</td>
         <td>${student.age}</td>

@@ -25,24 +25,34 @@ public class StudentsController {
 		if ( "".equals(id) && "".equals(name) ) {
 			List<Student> students = studentService.listAllStudent();
 			modelAndView.addObject("students", students);
-			modelAndView.setViewName("test");
+			modelAndView.setViewName("index");
 			return modelAndView;
 		}
 		List<Student> students = studentService.listStudent(id, name);
 		modelAndView.addObject("students", students);
 		modelAndView.addObject("id",id);
 		modelAndView.addObject("name",name);
-		modelAndView.setViewName("test");
+		modelAndView.setViewName("index");
 		return modelAndView;
 	}
 
-	@GetMapping("/test")
+    @GetMapping("/updateStudent")
+    public void updateStudent(Student student){
+        studentService.updateStudent(student);
+        ModelAndView modelAndView = new ModelAndView();
+        this.text();
+    }
+	/**
+	 * @author zhangzhen
+	 * @param
+	 */
+	@GetMapping("/index")
 	public ModelAndView text() {
 		List<Student> students = studentService.listAllStudent();
 		System.out.println(students.size());
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("students", students);
-		modelAndView.setViewName("test");
+		modelAndView.setViewName("index");
 		return modelAndView;
 	}
 
@@ -54,25 +64,29 @@ public class StudentsController {
     @ResponseBody
     public void deleteStudent(Student student){
         JDBC G = JDBC.getInstance();
-        G.delete(student);
+        G.delete(student.getId());
     }
+
     @GetMapping("/insertStudent")
     @ResponseBody
     public void insertStudent(Student student){
         JDBC G = JDBC.getInstance();
         G.insert(student);
     }
+
     @GetMapping("/selectStudent")
     @ResponseBody
     public void selectStudent(String... names){
         JDBC G = JDBC.getInstance();
         G.selectList(names);
     }
+   /* @GetMapping("/updateStudent")
+
     @GetMapping("/updateStudent")
     @ResponseBody
     public void updateStudent(Student student){
         JDBC G = JDBC.getInstance();
         G.update(student);
-    }
+    }*/
 
 }

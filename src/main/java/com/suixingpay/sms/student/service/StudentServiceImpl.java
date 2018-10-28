@@ -50,6 +50,9 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public boolean updateStudent(Student student) {
-		return false;
+		student.setId(StringUUID.getRandomID());
+		student.setCreatDate(StringUUID.getCurrentDate());
+		studentDao.updateStudent(student);
+		return true;
 	}
 }
