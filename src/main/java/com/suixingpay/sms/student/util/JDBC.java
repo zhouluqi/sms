@@ -45,9 +45,10 @@ public class JDBC {
                     stu.setSex(values[2]);
                     stu.setAge(new Integer(values[3]));
                     stu.setClassNumber(values[4]);
-                    stu.setCreatDate(values[5]);
-                    stu.setEnrollmentYear(values[6]);
-                    stu.setStatus(values[7]);
+                    stu.setTeacher(values[5]);
+                    stu.setCreatDate(values[6]);
+                    stu.setEnrollmentYear(values[7]);
+                    stu.setStatus(values[8]);
                     STUDENT_BOX.put(values[0], stu);
                     value = br.readLine();
                 }
@@ -143,7 +144,6 @@ public class JDBC {
             }
             return arr;
         }
-        arr.add(STUDENT_BOX.get(id));
         return arr;
     }
 

@@ -2,10 +2,6 @@
  * Created by Administrator on 2018/10/28.
  */
 
-function showAddBox(){
-    var addBox = document.getElementById("addBox");
-    addBox.style.display = "block";
-}
 function data1(){
     var date = new Date();
     var year = date.getFullYear();

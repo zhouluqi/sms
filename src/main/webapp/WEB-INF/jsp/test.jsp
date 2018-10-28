@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <!DOCTYPE html>
   <html>
   <head lang="en">
@@ -37,7 +38,7 @@
   <div class="wrapper">
   <div class="container-fluid content">
   <div class="tit">
-  <img src="img/tit.jpg">
+  <img src="/img/tit.jpg">
   </div>
 
   <nav class="navbar navbar-default" role="navigation">
@@ -126,118 +127,24 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-  <td>
-  <input type="checkbox">
-  </td>
-  <td>魏东东</td>
-  <td>21</td>
-  <td>1511431101</td>
-  <td>计算机1班</td>
-  <td>刘超</td>
-  <td>2015.10</td>
-  <td>2015.9</td>
-  <td><a>修改</a></td>
-  <td><a>删除</a></td>
-  </tr>
-  <tr>
-  <td>
-  <input type="checkbox">
-  </td>
-  <td>魏东东</td>
-  <td>21</td>
-  <td>1511431101</td>
-  <td>计算机1班</td>
-  <td>刘超</td>
-  <td>2015.10</td>
-  <td>2015.9</td>
-  <td><a>修改</a></td>
-  <td><a>删除</a></td>
-  </tr>
-  <tr>
-  <td>
-  <input type="checkbox">
-  </td>
-  <td>魏东东</td>
-  <td>21</td>
-  <td>1511431101</td>
-  <td>计算机1班</td>
-  <td>刘超</td>
-  <td>2015.10</td>
-  <td>2015.9</td>
-  <td><a>修改</a></td>
-  <td><a>删除</a></td>
-  </tr>
-  <tr>
-  <td>
-  <input type="checkbox">
-  </td>
-  <td>魏东东</td>
-  <td>21</td>
-  <td>1511431101</td>
-  <td>计算机1班</td>
-  <td>刘超</td>
-  <td>2015.10</td>
-  <td>2015.9</td>
-  <td><a>修改</a></td>
-  <td><a>删除</a></td>
-  </tr>
-  <tr>
-  <td>
-  <input type="checkbox">
-  </td>
-  <td>魏东东</td>
-  <td>21</td>
-  <td>1511431101</td>
-  <td>计算机1班</td>
-  <td>刘超</td>
-  <td>2015.10</td>
-  <td>2015.9</td>
-  <td><a>修改</a></td>
-  <td><a>删除</a></td>
-  </tr>
-  <tr>
-  <td>
-  <input type="checkbox">
-  </td>
-  <td>魏东东</td>
-  <td>21</td>
-  <td>1511431101</td>
-  <td>计算机1班</td>
-  <td>刘超</td>
-  <td>2015.10</td>
-  <td>2015.9</td>
-  <td><a>修改</a></td>
-  <td><a>删除</a></td>
-  </tr>
-  <tr>
-  <td>
-  <input type="checkbox">
-  </td>
-  <td>魏东东</td>
-  <td>21</td>
-  <td>1511431101</td>
-  <td>计算机1班</td>
-  <td>刘超</td>
-  <td>2015.10</td>
-  <td>2015.9</td>
-  <td><a>修改</a></td>
-  <td><a>删除</a></td>
-  </tr>
-  <tr>
-  <td>
-  <input type="checkbox">
-  </td>
-  <td>魏东东</td>
-  <td>21</td>
-  <td>1511431101</td>
-  <td>计算机1班</td>
-  <td>刘超</td>
-  <td>2015.10</td>
-  <td>2015.9</td>
-  <td><a>修改</a></td>
-  <td><a>删除</a></td>
-  </tr>
+  <c:forEach var="student" items="${ students }">
+
+      <tr>
+        <td>
+          <input type="checkbox">
+        </td>
+        <td>${student.name}</td>
+        <td>${student.age}</td>
+        <td>${student.id}</td>
+        <td>${student.classNumber}</td>
+        <td>${student.teacher}</td>
+        <td>${student.creatDate}</td>
+        <td>${student.enrollmentYear}</td>
+        <td><a>修改</a></td>
+        <td><a>删除</a></td>
+      </tr>
+
+  </c:forEach>
   </tbody>
   </table>
   </div>

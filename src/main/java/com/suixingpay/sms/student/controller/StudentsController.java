@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/student")
@@ -23,7 +26,7 @@ public class StudentsController {
 	public ModelAndView selectStudentBy(String id, String name){
 		List<Student> students = studentService.listStudent(id, name);
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject(students);
+		modelAndView.addObject("students", students);
 		modelAndView.setViewName("test");
 		return modelAndView;
 	}
@@ -35,8 +38,9 @@ public class StudentsController {
 	@GetMapping("/test")
 	public ModelAndView text() {
 		List<Student> students = studentService.listAllStudent();
+		System.out.println(students.size());
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject(students);
+		modelAndView.addObject("students", students);
 		modelAndView.setViewName("test");
 		return modelAndView;
 	}
@@ -57,10 +61,17 @@ public class StudentsController {
         JDBC G = JDBC.getInstance();
         G.insert(student);
     }
+    @GetMapping("/selectStudent")
+    @ResponseBody
+    public void selectStudent(String... names){
+        JDBC G = JDBC.getInstance();
+        G.selectList(names);
+    }
     @GetMapping("/updateStudent")
     @ResponseBody
     public void updateStudent(Student student){
         JDBC G = JDBC.getInstance();
         G.update(student);
     }
+
 }
