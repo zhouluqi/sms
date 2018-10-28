@@ -14,7 +14,9 @@ public interface StudentDao {
 
  String saveStudent(Student student);
 
- List<Student> listStudent(Student student);
+ List<Student> listStudentBy(String aid, String name);
+
+ List<Student> listStudent();
 
  boolean removeStudent(String[] arrayId);
 

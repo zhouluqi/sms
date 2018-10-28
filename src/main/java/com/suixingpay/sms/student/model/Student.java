@@ -12,9 +12,18 @@ public class Student {
 	private String sex;
 	private Integer age;
 	private String classNumber;
+	private String teacher;
 	private String creatDate;
 	private String EnrollmentYear;
 	private String status;
+
+	public String getTeacher() {
+		return teacher;
+	}
+
+	public void setTeacher(String teacher) {
+		this.teacher = teacher;
+	}
 
 	public String getId() {
 		return id;

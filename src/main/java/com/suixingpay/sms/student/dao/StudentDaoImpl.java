@@ -21,9 +21,18 @@ public class StudentDaoImpl implements StudentDao{
 	}
 
 	@Override
-	public List<Student> listStudent(Student student) {
-		return null;
+	public List<Student> listStudentBy(String id, String name) {
+		if (id != null && !id.equals("")) {
+			return jdbc.selectList(id);
+		}
+		return jdbc.selectListByName(name);
 	}
+
+	@Override
+	public List<Student> listStudent() {
+		return jdbc.selectList();
+	}
+
 
 	@Override
 	public boolean removeStudent(String[] arrayId) {

@@ -18,8 +18,7 @@ import java.util.Iterator;
 public class JDBC {
 
     private static HashMap<String, Student> STUDENT_BOX = new HashMap<String, Student>();
-
-    private static File FILE = new File("src/main/resources/static/db/Student.txt");
+    private static File FILE = new File("src/main/resources/static/Student.txt");
     private static JDBC JDBC = new JDBC();
 
     private JDBC(){}
@@ -46,9 +45,10 @@ public class JDBC {
                     stu.setSex(values[2]);
                     stu.setAge(new Integer(values[3]));
                     stu.setClassNumber(values[4]);
-                    stu.setCreatDate(values[5]);
-                    stu.setEnrollmentYear(values[6]);
-                    stu.setStatus(values[7]);
+                    stu.setTeacher(values[5]);
+                    stu.setCreatDate(values[6]);
+                    stu.setEnrollmentYear(values[7]);
+                    stu.setStatus(values[8]);
                     STUDENT_BOX.put(values[0], stu);
                     value = br.readLine();
                 }
@@ -125,12 +125,26 @@ public class JDBC {
         }
     }
 
-    public ArrayList<Student> selectList(String... names){
+    public ArrayList<Student> selectListByName(String name){
+        ArrayList<Student> arr = new ArrayList<Student>();
+        for (Student s : STUDENT_BOX.values()){
+            if ( name.equals(s.getName())) {
+                arr.add(s);
+            }
+        }
+        return arr;
+    }
+    //id==0：查询所有；id==1：查询单个
+    public ArrayList<Student> selectList(String... id){
         ArrayList<Student> arr;
         arr = new ArrayList<Student>();
-        for (int i=0; i<names.length; i++) {
-            arr.add(STUDENT_BOX.get(names[i]));
+        if ( id == null || id.length == 0) {
+            for (Student s : STUDENT_BOX.values()){
+                arr.add(s);
+            }
+            return arr;
         }
+        arr.add(STUDENT_BOX.get(id[0]));
         return arr;
     }
 
@@ -176,5 +190,4 @@ public class JDBC {
         sb.append(student.getStatus());
         return sb.toString();
     }
-
 }
