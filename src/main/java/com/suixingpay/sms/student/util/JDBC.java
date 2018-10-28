@@ -18,8 +18,7 @@ import java.util.Iterator;
 public class JDBC {
 
     private static HashMap<String, Student> STUDENT_BOX = new HashMap<String, Student>();
-
-    private static File FILE = new File("src/main/resources/static/db/Student.txt");
+    private static File FILE = new File("D://Student.txt");
     private static JDBC JDBC = new JDBC();
 
     private JDBC(){}
@@ -176,5 +175,4 @@ public class JDBC {
         sb.append(student.getStatus());
         return sb.toString();
     }
-
 }
