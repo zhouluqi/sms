@@ -39,6 +39,7 @@ public class StudentsController {
 	@GetMapping("/test")
 	public ModelAndView text() {
 		List<Student> students = studentService.listAllStudent();
+		System.out.println(students.size());
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("students", students);
 		modelAndView.setViewName("test");
