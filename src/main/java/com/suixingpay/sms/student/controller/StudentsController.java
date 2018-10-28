@@ -58,4 +58,8 @@ public class StudentsController {
 	public String text(){
 		return "index";
 	}
+
+	public String test(){
+		return "test";
+	}
 }
