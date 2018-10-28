@@ -57,11 +57,11 @@
   </nav>
 
   <div class="searchBox">
-  <form class="bs-example bs-example-form" role="form">
+  <form id="fm" class="bs-example bs-example-form" role="form" action="${pageContext.request.contextPath}/student/selectStudentBy">
   <div class="row" style="margin:50px 0 0 0">
-  <input type="text" class="form-control" placeholder="请输入姓名" style="float:left; max-width:260px; margin:0 20px 0 80px;">
-  <input type="text" class="form-control" placeholder="请输入学号" style="float:left; max-width:260px;">
-  <button class="btn btn-success ml15">查询</button>
+  <input type="text" name="name" value="${name}" class="form-control" placeholder="请输入姓名" style="float:left; max-width:260px; margin:0 20px 0 80px;">
+  <input type="text" name="id" value="${id}" class="form-control" placeholder="请输入学号" style="float:left; max-width:260px;">
+      <button class="btn btn-success ml15" onclick="commitBy()">查询</button>
   <button class="btn btn-warning ml15 popover-show" onclick="show()">
   添加
   </button>

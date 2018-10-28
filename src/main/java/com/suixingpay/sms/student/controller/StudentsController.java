@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/student")
@@ -24,21 +21,24 @@ public class StudentsController {
 
 	@GetMapping("/selectStudentBy")
 	public ModelAndView selectStudentBy(String id, String name){
-		List<Student> students = studentService.listStudent(id, name);
 		ModelAndView modelAndView = new ModelAndView();
+		if ( "".equals(id) && "".equals(name) ) {
+			List<Student> students = studentService.listAllStudent();
+			modelAndView.addObject("students", students);
+			modelAndView.setViewName("test");
+			return modelAndView;
+		}
+		List<Student> students = studentService.listStudent(id, name);
 		modelAndView.addObject("students", students);
+		modelAndView.addObject("id",id);
+		modelAndView.addObject("name",name);
 		modelAndView.setViewName("test");
 		return modelAndView;
 	}
 
-	/**
-	 * @author zhangzhen
-	 * @param
-	 */
 	@GetMapping("/test")
 	public ModelAndView text() {
 		List<Student> students = studentService.listAllStudent();
-		System.out.println(students.size());
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("students", students);
 		modelAndView.setViewName("test");

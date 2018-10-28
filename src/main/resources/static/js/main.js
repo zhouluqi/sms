@@ -20,4 +20,9 @@ function show(){
         $("#bg2").show().fadeTo(2000,.9);
         $("#addBox").delay(1000).show();
     });
+
+}
+
+function commitBy() {
+    $("fm").submit();
 }

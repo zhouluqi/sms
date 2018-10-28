@@ -144,6 +144,7 @@ public class JDBC {
             }
             return arr;
         }
+        arr.add(STUDENT_BOX.get(id[0]));
         return arr;
     }
 
