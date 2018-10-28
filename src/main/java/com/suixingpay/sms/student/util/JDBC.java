@@ -17,7 +17,7 @@ import java.util.Iterator;
  */
 public class JDBC {
 
-    public static HashMap<String, Student> STUDENT_BOX = new HashMap<String, Student>();
+    private static HashMap<String, Student> STUDENT_BOX = new HashMap<String, Student>();
     private static File FILE = new File("D://Student.txt");
     private static JDBC JDBC = new JDBC();
 
@@ -140,7 +140,7 @@ public class JDBC {
     //待优化
     public void insert(Student student){
         Student news = STUDENT_BOX.get(student.getId());
-        System.out.println(student.equals(news));
+        // System.out.println(student.equals(news));
          if (news == null) {
             STUDENT_BOX.put(student.getId(), student);
             this.commitOne(student);

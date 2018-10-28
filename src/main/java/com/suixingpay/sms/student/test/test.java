@@ -1,5 +1,6 @@
 package com.suixingpay.sms.student.test;
 
+import com.suixingpay.sms.student.model.Student;
 import com.suixingpay.sms.student.util.StringUUID;
 
 /**
@@ -13,6 +14,10 @@ public class test {
 	public static void main(String[] args) {
 		System.out.println(StringUUID.getRandomID());
 		System.out.println(StringUUID.getCurrentDate());
+		Student student = new Student();
+		System.out.println(student);
+
+		//String basePath = request.getScheme()+”://”+request.getServerName()+”:”+request.getServerPort()+path+”/”;
 
 	}
 }

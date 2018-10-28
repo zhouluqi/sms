@@ -1,6 +1,7 @@
 package com.suixingpay.sms.student.dao;
 
 import com.suixingpay.sms.student.model.Student;
+import com.suixingpay.sms.student.util.JDBC;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,8 +13,10 @@ import java.util.List;
  */
 @Repository
 public class StudentDaoImpl implements StudentDao{
+	private JDBC jdbc = JDBC.getInstance();
 	@Override
 	public String saveStudent(Student student) {
+       // jdbc
 		return null;
 	}
 

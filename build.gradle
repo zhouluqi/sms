@@ -1,9 +1,12 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.6.RELEASE'
+        springBootVersion = '1.5.9.RELEASE'
     }
     repositories {
-        mavenCentral()
+        //内网地址
+        maven{
+            url "http://172.16.60.188:8081/nexus/content/groups/public"
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -11,20 +14,27 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
 
 group = 'com.suixingpay'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    //内网地址
+    maven{
+        url "http://172.16.60.188:8081/nexus/content/groups/public"
+    }
 }
 
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf:1.5.9.RELEASE'
+    compile 'commons-validator:commons-validator:1.4.1'
+    compile 'net.sourceforge.nekohtml:nekohtml:1.9.22'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
