@@ -152,6 +152,9 @@ public class JDBC {
         STUDENT_BOX.put(student.getId(), student);
         this.commit();
     }
+    public void update(){
+        this.commit();
+    }
     //待优化
     public void insert(Student student){
         Student news = STUDENT_BOX.get(student.getId());
@@ -165,10 +168,9 @@ public class JDBC {
         }
     }
 
-    public void delete(Student student){
-        Student newStudent = STUDENT_BOX.get(student.getId());
+    public void delete(String id){
+        Student newStudent = STUDENT_BOX.get(id);
         newStudent.setStatus("deleted");
-        this.update(newStudent);
     }
 
     public String splicer(Student student){

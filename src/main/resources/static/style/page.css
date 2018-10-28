@@ -1,0 +1,47 @@
+body{
+	margin:0;
+	padding:0;
+	background:url(../img/4.png) no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+.wrap{
+	position: relative;
+	top:150px;
+	width:400px;
+	height:250px;
+	border:1px solid #000;
+	margin:0 auto;
+	text-align:center;
+}
+#user,#pass{
+	border:none;
+	outline:none;
+	margin-top:20px; 
+	border-bottom: 1px solid blue;
+}
+#btn_login{
+	margin-top: 30px;
+	background:lightblue;
+	border:none;
+	cursor: pointer;
+	width:200px;
+	height:30px;
+	text-align: center;
+	line-height: 30px;
+	margin-left: 10px;
+	border-radius: 8px;	
+	color:#fff;
+}
+.popupBox{
+	width:400px;
+	height:40px;
+	font:14px "Microsoft YaHei";
+	background: gray;
+	color:#fff;
+	text-align: center;
+	line-height: 40px;
+	border-radius:8px;
+	display: none;
+}
