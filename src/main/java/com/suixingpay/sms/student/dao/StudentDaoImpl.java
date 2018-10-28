@@ -41,6 +41,7 @@ public class StudentDaoImpl implements StudentDao{
 
 	@Override
 	public boolean updateStudent(Student student) {
-		return false;
+		jdbc.update(student);
+		return true;
 	}
 }

@@ -36,7 +36,17 @@ public class StudentsController {
 		return modelAndView;
 	}
 
-	@GetMapping("/test")
+    @GetMapping("/updateStudent")
+    public void updateStudent(Student student){
+        studentService.updateStudent(student);
+        ModelAndView modelAndView = new ModelAndView();
+        this.text();
+    }
+	/**
+	 * @author zhangzhen
+	 * @param
+	 */
+	@GetMapping("/index")
 	public ModelAndView text() {
 		List<Student> students = studentService.listAllStudent();
 		System.out.println(students.size());
@@ -70,12 +80,13 @@ public class StudentsController {
         JDBC G = JDBC.getInstance();
         G.selectList(names);
     }
+   /* @GetMapping("/updateStudent")
 
     @GetMapping("/updateStudent")
     @ResponseBody
     public void updateStudent(Student student){
         JDBC G = JDBC.getInstance();
         G.update(student);
-    }
+    }*/
 
 }
